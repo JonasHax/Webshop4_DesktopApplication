@@ -12,5 +12,7 @@ namespace DesktopApplication.Service {
         //CompanyProduct GetProductById(int id);
 
         CompanyProduct GetProductById(int id);
+
+        CompanyProduct CreateProduct(Product prod);
     }
 }

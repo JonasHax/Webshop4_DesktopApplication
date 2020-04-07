@@ -54,6 +54,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controller\ProductController.cs" />
+    <Compile Include="Presentation\CreateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\CreateProduct.Designer.cs">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\CompanyProduct.cs" />
     <Compile Include="Model\CompanyProductVersion.cs" />
     <Compile Include="Presentation\Tester.cs">
@@ -68,6 +74,9 @@
     <Compile Include="Service\ServiceProduct.cs" />
     <Compile Include="Utility\ConvertDataModel.cs" />
     <Compile Include="Utility\IModelConvert.cs" />
+    <EmbeddedResource Include="Presentation\CreateProduct.resx">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Tester.resx">
       <DependentUpon>Tester.cs</DependentUpon>
     </EmbeddedResource>

@@ -14,6 +14,15 @@ namespace DesktopApplication.Service {
         public ServiceProduct() {
         }
 
+        public CompanyProduct CreateProduct(Product prod)
+        {
+            ProductServiceClient proxy = new ProductServiceClient();
+            ConvertDataModel converter = new ConvertDataModel();
+            CompanyProduct product = converter.ConvertFromServiceProduct(proxy.CreateProduct(prod));
+
+            return product;
+        }
+
         public CompanyProduct GetProductById(int id) {
             ProductServiceClient proxy = new ProductServiceClient();
             ConvertDataModel converter = new ConvertDataModel();

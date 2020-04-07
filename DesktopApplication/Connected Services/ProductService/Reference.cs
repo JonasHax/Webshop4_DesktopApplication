@@ -290,5 +290,10 @@ namespace DesktopApplication.ProductService {
         public System.Threading.Tasks.Task<int> GetANumberAsync(int number) {
             return base.Channel.GetANumberAsync(number);
         }
+
+        internal Product CreateProduct(Product prod)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

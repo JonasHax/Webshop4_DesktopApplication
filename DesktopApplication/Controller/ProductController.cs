@@ -15,5 +15,20 @@ namespace DesktopApplication.Controller {
             ServiceProduct service = new ServiceProduct();
             return service.GetProductById(id);
         }
-    }
+
+        public CompanyProduct CreateProduct(string name, string description, decimal price)
+        {
+            Product prod = new Product
+            {
+                Name = name,
+                Description = description,
+                Price = price,
+                State = true
+               
+            };
+
+            ServiceProduct service = new ServiceProduct();
+            return service.CreateProduct(prod);
+        }
+    }        
 }
