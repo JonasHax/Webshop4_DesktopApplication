@@ -24,11 +24,13 @@ namespace DesktopApplication.Controller {
                 Description = description,
                 Price = price,
                 State = true
-               
+
             };
 
             ServiceProduct service = new ServiceProduct();
             return service.CreateProduct(prod);
         }
+
+
     }        
 }

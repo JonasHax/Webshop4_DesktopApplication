@@ -54,6 +54,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controller\ProductController.cs" />
+    <Compile Include="Model\CompanyEnum.cs" />
     <Compile Include="Presentation\CreateProduct.cs">
       <SubType>Form</SubType>
     </Compile>

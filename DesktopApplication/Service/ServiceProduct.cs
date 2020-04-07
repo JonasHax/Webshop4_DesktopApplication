@@ -16,13 +16,16 @@ namespace DesktopApplication.Service {
 
         public CompanyProduct CreateProduct(Product prod)
         {
+            int id = 1;
             ProductServiceClient proxy = new ProductServiceClient();
             ConvertDataModel converter = new ConvertDataModel();
-            CompanyProduct product = converter.ConvertFromServiceProduct(proxy.CreateProduct(prod));
+  //          CompanyProduct product = converter.ConvertToServiceProduct(proxy.CreateProduct(prod));
+            CompanyProduct product = converter.ConvertFromServiceProduct(proxy.GetProduct(id));     // Erstattes af ovenstående linje, kun for at kunne køre programmet!
 
             return product;
         }
 
+       
         public CompanyProduct GetProductById(int id) {
             ProductServiceClient proxy = new ProductServiceClient();
             ConvertDataModel converter = new ConvertDataModel();

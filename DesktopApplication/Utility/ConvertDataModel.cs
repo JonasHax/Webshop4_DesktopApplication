@@ -1,4 +1,5 @@
 ﻿using DesktopApplication.Model;
+using DesktopApplication.ProductService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,5 +35,20 @@ namespace DesktopApplication.Utility {
             }
             return convertedProduct;
         }
+
+        public Product ConvertToServiceProduct(CompanyProduct product){
+            Product foundProduct = null;
+            if (product != null) {
+                foundProduct = new Product { 
+                    Name = product.Name,
+                    Description = product.Description,
+                    Price = product.Price,
+                    State = product.State
+
+                };
+            }
+            return foundProduct;
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DesktopApplication.Model;
+using DesktopApplication.ProductService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace DesktopApplication.Utility {
     public interface IModelConvert {
 
         CompanyProduct ConvertFromServiceProduct(ProductService.Product productToConvert);
+
+        Product ConvertToServiceProduct(CompanyProduct product);
     }
 }

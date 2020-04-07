@@ -11,8 +11,8 @@
 namespace DesktopApplication.ProductService {
     using System.Runtime.Serialization;
     using System;
-    
-    
+    using DesktopApplication.Model;
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/Services.Model")]
@@ -291,9 +291,6 @@ namespace DesktopApplication.ProductService {
             return base.Channel.GetANumberAsync(number);
         }
 
-        internal Product CreateProduct(Product prod)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
