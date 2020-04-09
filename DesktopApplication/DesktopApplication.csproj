@@ -95,6 +95,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\ProductService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProductService\DesktopApplication.ProductService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

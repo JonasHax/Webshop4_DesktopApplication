@@ -1,5 +1,6 @@
 ﻿using DesktopApplication.Controller;
 using DesktopApplication.Model;
+using DesktopApplication.ProductService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,51 +12,67 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DesktopApplication.Model.CompanyEnum;
 
-namespace DesktopApplication
-{
-    public partial class CreateProduct : Form
-    {
-        public CreateProduct()
-        {
+namespace DesktopApplication {
+
+    public partial class CreateProduct : Form {
+
+        public CreateProduct() {
             InitializeComponent();
-            comboBox_Size.DataSource = Enum.GetValues(typeof(ClothesSize));
-            comboBox_Color.DataSource = Enum.GetValues(typeof(ClothColors));
-            comboBox_Category.DataSource = Enum.GetValues(typeof(ShopCategory));
+            ProductController pc = new ProductController();
+            List<string> colors = pc.GetAllColors();
+            foreach (string color in colors) {
+                comboBox_Color.Items.Add(color);
+            }
+
+            List<string> sizes = pc.GetAllSizes();
+            foreach (string size in sizes) {
+                comboBox_Size.Items.Add(size);
+            }
+
+            List<string> categories = pc.GetAllCategories();
+            foreach (string category in categories) {
+                comboBox_Category.Items.Add(category);
+            }
         }
 
-        private void label2_Click(object sender, EventArgs e)   // Kan ikke finde ud af at slette den :)
-        {
-
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+        private void button1_Click(object sender, EventArgs e) {
             string name = txtName.Text.Trim();
             string description = txtDescription.Text.Trim();
             decimal price = decimal.Parse(txtPrice.Text);  // skal måske være en string og parses til decimal senere??
-            CompanyEnum.ClothesSize rawSize = (CompanyEnum.ClothesSize)comboBox_Size.SelectedItem;
-            CompanyEnum.ClothColors rawColor = (CompanyEnum.ClothColors)comboBox_Color.SelectedItem;
-            CompanyEnum.ShopCategory rawCat = (CompanyEnum.ShopCategory)comboBox_Category.SelectedItem;
 
-            bool inputIsOk = !((string.IsNullOrEmpty(name) && string.IsNullOrEmpty(description) && rawSize != CompanyEnum.ClothesSize.size
-                && rawColor != CompanyEnum.ClothColors.Color && rawCat != CompanyEnum.ShopCategory.Category));  // Der skal kontrolleres at pris er indtastet. Decimal
-            
-            if (inputIsOk)
-            {
-                ProductController prodCtrl = new ProductController();
-                prodCtrl.CreateProduct(name, description, price);
-                lblSuccess.Text = "Product created";
-            }
-            else
-            {
-                lblError.Text = $"Input valid values!";
+            Product newProduct = new Product() {
+                Name = name,
+                Description = description,
+                Price = price,
+                State = true
+            };
+
+            ProductController pc = new ProductController();
+            bool result = pc.InsertProduct(newProduct);
+
+            if (result) {
+                lblSuccess.Text = "Success";
+            } else {
+                lblError.Text = "FEJL";
             }
         }
 
-        private void CreateProduct_Load(object sender, EventArgs e)
-        {
+        private void comboBox_Size_SelectedIndexChanged(object sender, EventArgs e) {
+        }
 
+        private void btnSearch_Click(object sender, EventArgs e) {
+            int id;
+
+            try {
+                int.TryParse(txtSearchProd.Text, out id);
+                ProductController pc = new ProductController();
+                CompanyProduct product = pc.GetProductById(id);
+                lblName.Text = product.Name;
+                lblDescription.Text = product.Description;
+                lblPrice.Text = product.Price.ToString();
+            } catch (Exception) {
+                lblError.Text = "Indtast et varenummer";
+            }
         }
     }
 }

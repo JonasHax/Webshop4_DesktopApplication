@@ -13,6 +13,14 @@ namespace DesktopApplication.Service {
 
         CompanyProduct GetProductById(int id);
 
-        CompanyProduct CreateProduct(Product prod);
+        //CompanyProduct CreateProduct(Product prod);
+
+        bool InsertProduct(Product productToInsert);
+
+        List<string> GetAllSizes();
+
+        List<string> GetAllColors();
+
+        List<string> GetAllCategories();
     }
 }

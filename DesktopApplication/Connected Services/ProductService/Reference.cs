@@ -11,8 +11,8 @@
 namespace DesktopApplication.ProductService {
     using System.Runtime.Serialization;
     using System;
-    using DesktopApplication.Model;
-
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/Services.Model")]
@@ -246,6 +246,36 @@ namespace DesktopApplication.ProductService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetANumber", ReplyAction="http://tempuri.org/IProductService/GetANumberResponse")]
         System.Threading.Tasks.Task<int> GetANumberAsync(int number);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
+        DesktopApplication.ProductService.Product[] GetAllProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
+        System.Threading.Tasks.Task<DesktopApplication.ProductService.Product[]> GetAllProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/InsertProduct", ReplyAction="http://tempuri.org/IProductService/InsertProductResponse")]
+        bool InsertProduct(DesktopApplication.ProductService.Product productToInsert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/InsertProduct", ReplyAction="http://tempuri.org/IProductService/InsertProductResponse")]
+        System.Threading.Tasks.Task<bool> InsertProductAsync(DesktopApplication.ProductService.Product productToInsert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllSizes", ReplyAction="http://tempuri.org/IProductService/GetAllSizesResponse")]
+        string[] GetAllSizes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllSizes", ReplyAction="http://tempuri.org/IProductService/GetAllSizesResponse")]
+        System.Threading.Tasks.Task<string[]> GetAllSizesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllColors", ReplyAction="http://tempuri.org/IProductService/GetAllColorsResponse")]
+        string[] GetAllColors();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllColors", ReplyAction="http://tempuri.org/IProductService/GetAllColorsResponse")]
+        System.Threading.Tasks.Task<string[]> GetAllColorsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllCategories", ReplyAction="http://tempuri.org/IProductService/GetAllCategoriesResponse")]
+        string[] GetAllCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllCategories", ReplyAction="http://tempuri.org/IProductService/GetAllCategoriesResponse")]
+        System.Threading.Tasks.Task<string[]> GetAllCategoriesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -290,7 +320,45 @@ namespace DesktopApplication.ProductService {
         public System.Threading.Tasks.Task<int> GetANumberAsync(int number) {
             return base.Channel.GetANumberAsync(number);
         }
-
         
+        public DesktopApplication.ProductService.Product[] GetAllProducts() {
+            return base.Channel.GetAllProducts();
+        }
+        
+        public System.Threading.Tasks.Task<DesktopApplication.ProductService.Product[]> GetAllProductsAsync() {
+            return base.Channel.GetAllProductsAsync();
+        }
+        
+        public bool InsertProduct(DesktopApplication.ProductService.Product productToInsert) {
+            return base.Channel.InsertProduct(productToInsert);
+        }
+        
+        public System.Threading.Tasks.Task<bool> InsertProductAsync(DesktopApplication.ProductService.Product productToInsert) {
+            return base.Channel.InsertProductAsync(productToInsert);
+        }
+        
+        public string[] GetAllSizes() {
+            return base.Channel.GetAllSizes();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetAllSizesAsync() {
+            return base.Channel.GetAllSizesAsync();
+        }
+        
+        public string[] GetAllColors() {
+            return base.Channel.GetAllColors();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetAllColorsAsync() {
+            return base.Channel.GetAllColorsAsync();
+        }
+        
+        public string[] GetAllCategories() {
+            return base.Channel.GetAllCategories();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetAllCategoriesAsync() {
+            return base.Channel.GetAllCategoriesAsync();
+        }
     }
 }

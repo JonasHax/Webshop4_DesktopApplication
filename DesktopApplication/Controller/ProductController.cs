@@ -16,21 +16,39 @@ namespace DesktopApplication.Controller {
             return service.GetProductById(id);
         }
 
-        public CompanyProduct CreateProduct(string name, string description, decimal price)
-        {
-            Product prod = new Product
-            {
-                Name = name,
-                Description = description,
-                Price = price,
-                State = true
-
-            };
-
+        public bool InsertProduct(Product productToInsert) {
             ServiceProduct service = new ServiceProduct();
-            return service.CreateProduct(prod);
+            return service.InsertProduct(productToInsert);
         }
 
+        public List<string> GetAllColors() {
+            ServiceProduct service = new ServiceProduct();
+            return service.GetAllColors();
+        }
 
-    }        
+        public List<string> GetAllSizes() {
+            ServiceProduct service = new ServiceProduct();
+            return service.GetAllSizes();
+        }
+
+        public List<string> GetAllCategories() {
+            ServiceProduct service = new ServiceProduct();
+            return service.GetAllCategories();
+        }
+
+        //public CompanyProduct CreateProduct(string name, string description, decimal price)
+        //{
+        //    Product prod = new Product
+        //    {
+        //        Name = name,
+        //        Description = description,
+        //        Price = price,
+        //        State = true
+
+        //    };
+
+        //    ServiceProduct service = new ServiceProduct();
+        //    return service.CreateProduct(prod);
+        //}
+    }
 }
