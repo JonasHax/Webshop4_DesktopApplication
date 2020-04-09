@@ -67,9 +67,13 @@ namespace DesktopApplication {
                 int.TryParse(txtSearchProd.Text, out id);
                 ProductController pc = new ProductController();
                 CompanyProduct product = pc.GetProductById(id);
-                lblName.Text = product.Name;
-                lblDescription.Text = product.Description;
-                lblPrice.Text = product.Price.ToString();
+                if (product != null) {
+                    txtName.Text = product.Name;
+                    txtDescription.Text = product.Description;
+                    txtPrice.Text = product.Price.ToString();
+                } else {
+                    lblError.Text = "Produktet findes ikke";
+                }
             } catch (Exception) {
                 lblError.Text = "Indtast et varenummer";
             }
