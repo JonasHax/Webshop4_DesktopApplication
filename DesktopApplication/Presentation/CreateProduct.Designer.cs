@@ -215,6 +215,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "CreateProduct";
             this.Text = "CreateProduct";
+            this.Load += new System.EventHandler(this.CreateProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

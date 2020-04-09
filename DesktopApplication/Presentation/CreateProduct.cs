@@ -52,5 +52,10 @@ namespace DesktopApplication
                 lblError.Text = $"Input valid values!";
             }
         }
+
+        private void CreateProduct_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
