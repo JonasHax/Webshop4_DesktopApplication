@@ -16,9 +16,14 @@ namespace DesktopApplication.Controller {
             return service.GetProductById(id);
         }
 
-        public bool InsertProduct(Product productToInsert) {
+        public bool InsertProduct(CompanyProduct productToInsert) {
             ServiceProduct service = new ServiceProduct();
             return service.InsertProduct(productToInsert);
+        }
+
+        public bool InsertProductVersion(CompanyProductVersion prodVerToInsert, int styleNumber) {
+            ServiceProduct service = new ServiceProduct();
+            return service.InsertProductVersion(prodVerToInsert, styleNumber);
         }
 
         public List<string> GetAllColors() {
@@ -34,6 +39,11 @@ namespace DesktopApplication.Controller {
         public List<string> GetAllCategories() {
             ServiceProduct service = new ServiceProduct();
             return service.GetAllCategories();
+        }
+
+        public List<CompanyProduct> GetAllProducts() {
+            ServiceProduct service = new ServiceProduct();
+            return service.GetAllProducts();
         }
 
         //public CompanyProduct CreateProduct(string name, string description, decimal price)

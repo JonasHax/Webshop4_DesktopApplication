@@ -36,19 +36,40 @@ namespace DesktopApplication.Utility {
             return convertedProduct;
         }
 
-        public Product ConvertToServiceProduct(CompanyProduct product){
+        public List<CompanyProduct> ConvertListFromServiceProduct(List<Product> productsToConvert) {
+            List<CompanyProduct> convertedList = new List<CompanyProduct>();
+
+            foreach (Product product in productsToConvert) {
+                CompanyProduct convertedProduct = ConvertFromServiceProduct(product);
+                convertedList.Add(convertedProduct);
+            }
+
+            return convertedList;
+        }
+
+        public Product ConvertToServiceProduct(CompanyProduct product) {
             Product foundProduct = null;
             if (product != null) {
-                foundProduct = new Product { 
+                foundProduct = new Product {
                     Name = product.Name,
                     Description = product.Description,
                     Price = product.Price,
                     State = product.State
-
                 };
             }
             return foundProduct;
         }
 
+        public ProductVersion ConvertToServiceProductVersion(CompanyProductVersion prodVerToConvert) {
+            Product prod = ConvertToServiceProduct(prodVerToConvert.Product);
+            ProductVersion prodVer = new ProductVersion() {
+                Stock = prodVerToConvert.Stock,
+                ColorCode = prodVerToConvert.ColorCode,
+                SizeCode = prodVerToConvert.SizeCode,
+            };
+            prodVer.Product = prod;
+
+            return prodVer;
+        }
     }
 }

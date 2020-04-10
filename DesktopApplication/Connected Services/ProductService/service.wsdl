@@ -50,6 +50,12 @@
   <wsdl:message name="IProductService_GetAllCategories_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_InsertProductVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProductVersion" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertProductVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProductVersionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProductService">
     <wsdl:operation name="GetProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProduct" message="tns:IProductService_GetProduct_InputMessage" />
@@ -78,6 +84,10 @@
     <wsdl:operation name="GetAllCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllCategories" message="tns:IProductService_GetAllCategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllCategoriesResponse" message="tns:IProductService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/InsertProductVersion" message="tns:IProductService_InsertProductVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/InsertProductVersionResponse" message="tns:IProductService_InsertProductVersion_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProductService" type="tns:IProductService">
@@ -138,6 +148,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllCategories">
       <soap:operation soapAction="http://tempuri.org/IProductService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductVersion">
+      <soap:operation soapAction="http://tempuri.org/IProductService/InsertProductVersion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

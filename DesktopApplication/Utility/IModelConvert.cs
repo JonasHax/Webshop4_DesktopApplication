@@ -13,5 +13,9 @@ namespace DesktopApplication.Utility {
         CompanyProduct ConvertFromServiceProduct(ProductService.Product productToConvert);
 
         Product ConvertToServiceProduct(CompanyProduct product);
+
+        List<CompanyProduct> ConvertListFromServiceProduct(List<Product> productsToConvert);
+
+        ProductVersion ConvertToServiceProductVersion(CompanyProductVersion prodVerToConvert);
     }
 }

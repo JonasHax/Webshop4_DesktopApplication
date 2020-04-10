@@ -41,42 +41,33 @@ namespace DesktopApplication.Service {
             return product;
         }
 
-        public bool InsertProduct(Product productToInsert) {
+        public bool InsertProduct(CompanyProduct productToInsert) {
             ProductServiceClient proxy = new ProductServiceClient();
-            return proxy.InsertProduct(productToInsert);
+
+            ConvertDataModel converter = new ConvertDataModel();
+            Product convertedProd = converter.ConvertToServiceProduct(productToInsert);
+
+            return proxy.InsertProduct(convertedProd);
         }
 
-        //     public CompanyProduct CreateProduct(Product prod)
-        //      {
-        //          int id = 1;
-        //          ProductServiceClient proxy = new ProductServiceClient();
-        //          ConvertDataModel converter = new ConvertDataModel();
-        ////          CompanyProduct product = converter.ConvertToServiceProduct(proxy.CreateProduct(prod));
-        //          CompanyProduct product = converter.ConvertFromServiceProduct(proxy.GetProduct(id));     // Erstattes af ovenstående linje, kun for at kunne køre programmet!
+        public List<CompanyProduct> GetAllProducts() {
+            List<CompanyProduct> productList;
 
-        //          return product;
-        //      }
+            ProductServiceClient proxy = new ProductServiceClient();
+            ConvertDataModel converter = new ConvertDataModel();
+            productList = converter.ConvertListFromServiceProduct(proxy.GetAllProducts().ToList());
+            //productList = converter.
 
-        /*  public int CreateAuction(decimal bid, int status,
-           decimal currentPrice, decimal maxPrice, DateTime endDate, string title, string description, string category, string ownerId)
-          {
-              AuctionModel data = new AuctionModel
-              {
-                  Bid = bid,
-                  Status = status,
-                  CurrentPrice = currentPrice,
-                  MaxPrice = maxPrice,
-                  EndDate = endDate,
-                  Title = title,
-                  Description = description,
-                  Category = category,
-                  OwnerId = ownerId
-              };
-              string sql = @"insert into dbo.Auction (status, currentPrice, maxPrice, bid, endDate, title, description, category, ownerId)
-              values (0, @CurrentPrice, @MaxPrice, @Bid, @EndDate, @Title, @Description, @Category, @OwnerId);";
+            return productList;
+        }
 
-              return SqlDataAccess.SaveData(sql, data);
-          }
-          */
+        public bool InsertProductVersion(CompanyProductVersion prodVerToInsert, int styleNumber) {
+            ProductServiceClient proxy = new ProductServiceClient();
+            // Convert
+            ConvertDataModel converter = new ConvertDataModel();
+            ProductVersion convertedProdVer = converter.ConvertToServiceProductVersion(prodVerToInsert);
+
+            return proxy.InsertProductVersion(convertedProdVer, styleNumber);
+        }
     }
 }

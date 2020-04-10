@@ -276,6 +276,12 @@ namespace DesktopApplication.ProductService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllCategories", ReplyAction="http://tempuri.org/IProductService/GetAllCategoriesResponse")]
         System.Threading.Tasks.Task<string[]> GetAllCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/InsertProductVersion", ReplyAction="http://tempuri.org/IProductService/InsertProductVersionResponse")]
+        bool InsertProductVersion(DesktopApplication.ProductService.ProductVersion prodVerToInsert, int styleNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/InsertProductVersion", ReplyAction="http://tempuri.org/IProductService/InsertProductVersionResponse")]
+        System.Threading.Tasks.Task<bool> InsertProductVersionAsync(DesktopApplication.ProductService.ProductVersion prodVerToInsert, int styleNumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -359,6 +365,14 @@ namespace DesktopApplication.ProductService {
         
         public System.Threading.Tasks.Task<string[]> GetAllCategoriesAsync() {
             return base.Channel.GetAllCategoriesAsync();
+        }
+        
+        public bool InsertProductVersion(DesktopApplication.ProductService.ProductVersion prodVerToInsert, int styleNumber) {
+            return base.Channel.InsertProductVersion(prodVerToInsert, styleNumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> InsertProductVersionAsync(DesktopApplication.ProductService.ProductVersion prodVerToInsert, int styleNumber) {
+            return base.Channel.InsertProductVersionAsync(prodVerToInsert, styleNumber);
         }
     }
 }

@@ -15,7 +15,9 @@ namespace DesktopApplication.Service {
 
         //CompanyProduct CreateProduct(Product prod);
 
-        bool InsertProduct(Product productToInsert);
+        bool InsertProduct(CompanyProduct productToInsert);
+
+        bool InsertProductVersion(CompanyProductVersion prodVerToInsert, int styleNumber);
 
         List<string> GetAllSizes();
 
