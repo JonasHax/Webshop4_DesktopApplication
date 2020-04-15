@@ -43,24 +43,24 @@ namespace DesktopApplication {
             //}
         }
 
-        private void btnSearch_Click(object sender, EventArgs e) {
-            int id;
+        //private void btnSearch_Click(object sender, EventArgs e) {
+        //    int id;
 
-            try {
-                int.TryParse(txtSearchProd.Text, out id);
-                ProductController pc = new ProductController();
-                CompanyProduct product = pc.GetProductById(id);
-                if (product != null) {
-                    txtName.Text = product.Name;
-                    txtDescription.Text = product.Description;
-                    txtPrice.Text = product.Price.ToString();
-                } else {
-                    //lblError.Text = "Produktet findes ikke";
-                }
-            } catch (Exception) {
-                //lblError.Text = "Indtast et varenummer";
-            }
-        }
+        //    try {
+        //        int.TryParse(txtSearchProd.Text, out id);
+        //        ProductController pc = new ProductController();
+        //        CompanyProduct product = pc.GetProductById(id);
+        //        if (product != null) {
+        //            txtName.Text = product.Name;
+        //            txtDescription.Text = product.Description;
+        //            txtPrice.Text = product.Price.ToString();
+        //        } else {
+        //            //lblError.Text = "Produktet findes ikke";
+        //        }
+        //    } catch (Exception) {
+        //        //lblError.Text = "Indtast et varenummer";
+        //    }
+        //}
 
         private void gridViewProduct_SelectionChanged(object sender, EventArgs e) {
             CompanyProduct selectedProduct = (CompanyProduct)gridViewProduct.CurrentRow.DataBoundItem;
@@ -91,6 +91,8 @@ namespace DesktopApplication {
         }
 
         private void btnCreateProdVer_Click_1(object sender, EventArgs e) {
+            lblInserProductVersion.Text = "";
+
             string size = comboBox_Size.SelectedItem.ToString();
             string color = comboBox_Color.SelectedItem.ToString();
             int stock = int.Parse(txtStock.Text);
@@ -109,32 +111,83 @@ namespace DesktopApplication {
             bool result = pc.InsertProductVersion(newProdVer, selectedProduct.StyleNumber);
             if (result) {
                 UpdateProductVersionList();
-                Console.WriteLine("yay");
+                lblInserProductVersion.Text = "Underprodukt indsat!";
             } else {
-                Console.WriteLine("fuck");
+                lblInserProductVersion.Text = "Fejl med oprettelse";
             }
         }
 
         private void btnCreateProduct_Click(object sender, EventArgs e) {
+            lblInsertProduct.Text = "";
+
+            //string category = "";
+            //if (comboBox_Category.SelectedIndex > -1)
+            //{
+            //    category = comboBox_Category.SelectedItem.ToString();
+            //}
             string name = txtName.Text.Trim();
             string description = txtDescription.Text.Trim();
-            decimal price = decimal.Parse(txtPrice.Text);  // skal måske være en string og parses til decimal senere??
+            decimal price = -1;
+            try
+            {
+                price = decimal.Parse(txtPrice.Text);
 
-            CompanyProduct newProduct = new CompanyProduct() {
-                Name = name,
-                Description = description,
-                Price = price,
-                State = true
-            };
+                if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(description))
+                {
+                    CompanyProduct newProduct = new CompanyProduct()
+                    {
+                        Name = name,
+                        Description = description,
+                        Price = price,
+                        State = true
+                    };
 
-            ProductController pc = new ProductController();
-            bool result = pc.InsertProduct(newProduct);
+                    ProductController pc = new ProductController();
+                    bool result = pc.InsertProduct(newProduct);
 
-            if (result) {
-                // update list
-                UpdateProductList();
-            } else {
-                Console.WriteLine("noget gik galt");
+                    if (result)
+                    {
+                        UpdateProductList();
+                        lblInsertProduct.Text = "Produkt oprettet";
+                    }
+                    else
+                    {
+                        lblInsertProduct.Text = "Fejl under oprettelse";
+                    }
+                }
+                else
+                {
+                    lblInsertProduct.Text = "Udfyld alle felter";
+                }
+            }
+            catch (Exception)
+            {
+                lblInsertProduct.Text = "Prisen skal være et tal";
+            }
+        }
+
+        private void btnAddCategoryToProduct_Click(object sender, EventArgs e)
+        {
+            lblInsertProduct.Text = "";
+
+            CompanyProduct selectedProduct = (CompanyProduct)gridViewProduct.CurrentRow.DataBoundItem;
+            int styleNumber = selectedProduct.StyleNumber;
+            string category = "";
+
+            if (comboBox_Category.SelectedIndex > -1)
+            {
+                category = comboBox_Category.SelectedItem.ToString();
+            }
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                if(pc.InsertProductCategoryRelation(styleNumber, category))
+                {
+                    lblInsertProduct.Text = "Kategori er tilføjet produkt";
+                } else
+                {
+                    lblInsertProduct.Text = "Kategori er allerede på produkt";
+                }
             }
         }
     }

@@ -45,6 +45,8 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddCategoryToProduct = new System.Windows.Forms.Button();
+            this.lblInsertProduct = new System.Windows.Forms.Label();
             this.gridViewProduct = new System.Windows.Forms.DataGridView();
             this.styleNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,15 +55,13 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblInserProductVersion = new System.Windows.Forms.Label();
             this.gridViewProdVer = new System.Windows.Forms.DataGridView();
             this.sizeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colorCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyProductVersionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCreateProdVer = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearchProd = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyProductBindingSource)).BeginInit();
@@ -120,7 +120,7 @@
             // 
             // btnCreateProduct
             // 
-            this.btnCreateProduct.Location = new System.Drawing.Point(156, 409);
+            this.btnCreateProduct.Location = new System.Drawing.Point(154, 447);
             this.btnCreateProduct.Name = "btnCreateProduct";
             this.btnCreateProduct.Size = new System.Drawing.Size(293, 34);
             this.btnCreateProduct.TabIndex = 6;
@@ -197,6 +197,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAddCategoryToProduct);
+            this.groupBox1.Controls.Add(this.lblInsertProduct);
             this.groupBox1.Controls.Add(this.gridViewProduct);
             this.groupBox1.Controls.Add(this.comboBox_Category);
             this.groupBox1.Controls.Add(this.txtName);
@@ -209,10 +211,29 @@
             this.groupBox1.Controls.Add(this.btnCreateProduct);
             this.groupBox1.Location = new System.Drawing.Point(9, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(580, 457);
+            this.groupBox1.Size = new System.Drawing.Size(580, 510);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produkter";
+            // 
+            // btnAddCategoryToProduct
+            // 
+            this.btnAddCategoryToProduct.Location = new System.Drawing.Point(328, 373);
+            this.btnAddCategoryToProduct.Name = "btnAddCategoryToProduct";
+            this.btnAddCategoryToProduct.Size = new System.Drawing.Size(232, 23);
+            this.btnAddCategoryToProduct.TabIndex = 18;
+            this.btnAddCategoryToProduct.Text = "Tilføj kategori til det valgte produkt";
+            this.btnAddCategoryToProduct.UseVisualStyleBackColor = true;
+            this.btnAddCategoryToProduct.Click += new System.EventHandler(this.btnAddCategoryToProduct_Click);
+            // 
+            // lblInsertProduct
+            // 
+            this.lblInsertProduct.AutoSize = true;
+            this.lblInsertProduct.Location = new System.Drawing.Point(277, 422);
+            this.lblInsertProduct.Name = "lblInsertProduct";
+            this.lblInsertProduct.Size = new System.Drawing.Size(11, 13);
+            this.lblInsertProduct.TabIndex = 17;
+            this.lblInsertProduct.Text = "*";
             // 
             // gridViewProduct
             // 
@@ -267,6 +288,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblInserProductVersion);
             this.groupBox2.Controls.Add(this.gridViewProdVer);
             this.groupBox2.Controls.Add(this.btnCreateProdVer);
             this.groupBox2.Controls.Add(this.comboBox_Color);
@@ -277,10 +299,19 @@
             this.groupBox2.Controls.Add(this.comboBox_Size);
             this.groupBox2.Location = new System.Drawing.Point(595, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(390, 457);
+            this.groupBox2.Size = new System.Drawing.Size(390, 510);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Underprodukter";
+            // 
+            // lblInserProductVersion
+            // 
+            this.lblInserProductVersion.AutoSize = true;
+            this.lblInserProductVersion.Location = new System.Drawing.Point(187, 422);
+            this.lblInserProductVersion.Name = "lblInserProductVersion";
+            this.lblInserProductVersion.Size = new System.Drawing.Size(11, 13);
+            this.lblInserProductVersion.TabIndex = 21;
+            this.lblInserProductVersion.Text = "*";
             // 
             // gridViewProdVer
             // 
@@ -320,7 +351,7 @@
             // 
             // btnCreateProdVer
             // 
-            this.btnCreateProdVer.Location = new System.Drawing.Point(103, 409);
+            this.btnCreateProdVer.Location = new System.Drawing.Point(113, 447);
             this.btnCreateProdVer.Name = "btnCreateProdVer";
             this.btnCreateProdVer.Size = new System.Drawing.Size(176, 38);
             this.btnCreateProdVer.TabIndex = 15;
@@ -328,40 +359,11 @@
             this.btnCreateProdVer.UseVisualStyleBackColor = true;
             this.btnCreateProdVer.Click += new System.EventHandler(this.btnCreateProdVer_Click_1);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(412, 499);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(85, 23);
-            this.btnSearch.TabIndex = 22;
-            this.btnSearch.Text = "Søg Produkt";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearchProd
-            // 
-            this.txtSearchProd.Location = new System.Drawing.Point(313, 501);
-            this.txtSearchProd.Name = "txtSearchProd";
-            this.txtSearchProd.Size = new System.Drawing.Size(79, 20);
-            this.txtSearchProd.TabIndex = 23;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(283, 472);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(255, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Opret eller find et produkt for at tilføje underprodukter";
-            // 
             // CreateProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 553);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSearchProd);
-            this.Controls.Add(this.btnSearch);
+            this.ClientSize = new System.Drawing.Size(997, 532);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "CreateProduct";
@@ -375,7 +377,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProdVer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyProductVersionBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -398,9 +399,6 @@
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearchProd;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCreateProdVer;
         private System.Windows.Forms.DataGridView gridViewProduct;
         private System.Windows.Forms.BindingSource companyProductBindingSource;
@@ -414,5 +412,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sizeCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colorCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblInsertProduct;
+        private System.Windows.Forms.Label lblInserProductVersion;
+        private System.Windows.Forms.Button btnAddCategoryToProduct;
     }
 }

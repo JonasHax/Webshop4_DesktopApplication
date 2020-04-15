@@ -24,5 +24,7 @@ namespace DesktopApplication.Service {
         List<string> GetAllColors();
 
         List<string> GetAllCategories();
+
+        bool InsertProductCategoryRelation(int styleNumber, string category);
     }
 }

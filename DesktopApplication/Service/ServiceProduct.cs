@@ -69,5 +69,11 @@ namespace DesktopApplication.Service {
 
             return proxy.InsertProductVersion(convertedProdVer, styleNumber);
         }
+
+        public bool InsertProductCategoryRelation(int styleNumber, string category)
+        {
+            ProductServiceClient proxy = new ProductServiceClient();
+            return proxy.InsertProductCategoryRelation(styleNumber, category);
+        }
     }
 }

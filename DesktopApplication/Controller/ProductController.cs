@@ -46,6 +46,12 @@ namespace DesktopApplication.Controller {
             return service.GetAllProducts();
         }
 
+        public bool InsertProductCategoryRelation(int styleNumber, string category)
+        {
+            ServiceProduct service = new ServiceProduct();
+            return service.InsertProductCategoryRelation(styleNumber, category);
+        }
+
         //public CompanyProduct CreateProduct(string name, string description, decimal price)
         //{
         //    Product prod = new Product
