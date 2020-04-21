@@ -37,30 +37,9 @@ namespace DesktopApplication {
             // populate productlist
             List<CompanyProduct> productList = pc.GetAllProducts();
             gridViewProduct.DataSource = productList;
-            //foreach (CompanyProduct companyProduct in productList) {
-            //    //gridViewProduct.Rows.Add(companyProduct);
-            //    listBoxProduct.Items.Add(companyProduct);
-            //}
+
         }
 
-        //private void btnSearch_Click(object sender, EventArgs e) {
-        //    int id;
-
-        //    try {
-        //        int.TryParse(txtSearchProd.Text, out id);
-        //        ProductController pc = new ProductController();
-        //        CompanyProduct product = pc.GetProductById(id);
-        //        if (product != null) {
-        //            txtName.Text = product.Name;
-        //            txtDescription.Text = product.Description;
-        //            txtPrice.Text = product.Price.ToString();
-        //        } else {
-        //            //lblError.Text = "Produktet findes ikke";
-        //        }
-        //    } catch (Exception) {
-        //        //lblError.Text = "Indtast et varenummer";
-        //    }
-        //}
 
         private void gridViewProduct_SelectionChanged(object sender, EventArgs e) {
             CompanyProduct selectedProduct = (CompanyProduct)gridViewProduct.CurrentRow.DataBoundItem;
@@ -69,7 +48,6 @@ namespace DesktopApplication {
             List<CompanyProductVersion> listOfProdVer = selectedProduct.ProductVersions;
 
             // populate productversion list - clear it first
-            //gridViewProdVer.Rows.Clear();
             gridViewProdVer.DataSource = listOfProdVer;
         }
 
