@@ -37,6 +37,11 @@ namespace DesktopApplication {
             // populate productlist
             List<CompanyProduct> productList = pc.GetAllProducts();
             gridViewProduct.DataSource = productList;
+
+            // set selection mode on gridviews:
+            gridViewProduct.MultiSelect = false;
+            //gridViewProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridViewProdVer.MultiSelect = false;
         }
 
         private void gridViewProduct_SelectionChanged(object sender, EventArgs e) {

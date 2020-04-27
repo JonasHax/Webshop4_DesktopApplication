@@ -45,20 +45,20 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_ProductState = new System.Windows.Forms.CheckBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnUpdateProduct = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddCategoryToProduct = new System.Windows.Forms.Button();
             this.lblInsertProduct = new System.Windows.Forms.Label();
             this.gridViewProduct = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateProdVer = new System.Windows.Forms.Button();
+            this.btnDeleteProdVer = new System.Windows.Forms.Button();
+            this.btnClear2 = new System.Windows.Forms.Button();
             this.lblInserProductVersion = new System.Windows.Forms.Label();
             this.gridViewProdVer = new System.Windows.Forms.DataGridView();
             this.btnCreateProdVer = new System.Windows.Forms.Button();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.btnUpdateProduct = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnClear2 = new System.Windows.Forms.Button();
-            this.btnUpdateProdVer = new System.Windows.Forms.Button();
-            this.btnDeleteProdVer = new System.Windows.Forms.Button();
-            this.checkBox_ProductState = new System.Windows.Forms.CheckBox();
             this.sizeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colorCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +79,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(112, 277);
+            this.txtName.Location = new System.Drawing.Point(99, 278);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(407, 20);
             this.txtName.TabIndex = 0;
@@ -87,7 +87,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(38, 280);
+            this.lblName.Location = new System.Drawing.Point(25, 281);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(68, 13);
             this.lblName.TabIndex = 1;
@@ -96,7 +96,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(46, 310);
+            this.lblDescription.Location = new System.Drawing.Point(33, 311);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(61, 13);
             this.lblDescription.TabIndex = 2;
@@ -105,7 +105,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(75, 346);
+            this.lblPrice.Location = new System.Drawing.Point(62, 347);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(24, 13);
             this.lblPrice.TabIndex = 3;
@@ -113,23 +113,23 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(112, 307);
+            this.txtDescription.Location = new System.Drawing.Point(99, 308);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(407, 20);
             this.txtDescription.TabIndex = 4;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(112, 343);
+            this.txtPrice.Location = new System.Drawing.Point(99, 344);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(200, 20);
             this.txtPrice.TabIndex = 5;
             // 
             // btnCreateProduct
             // 
-            this.btnCreateProduct.Location = new System.Drawing.Point(135, 460);
+            this.btnCreateProduct.Location = new System.Drawing.Point(28, 461);
             this.btnCreateProduct.Name = "btnCreateProduct";
-            this.btnCreateProduct.Size = new System.Drawing.Size(293, 34);
+            this.btnCreateProduct.Size = new System.Drawing.Size(519, 34);
             this.btnCreateProduct.TabIndex = 6;
             this.btnCreateProduct.Text = "Opret Produkt";
             this.btnCreateProduct.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             // lblSize
             // 
             this.lblSize.AutoSize = true;
-            this.lblSize.Location = new System.Drawing.Point(45, 286);
+            this.lblSize.Location = new System.Drawing.Point(47, 289);
             this.lblSize.Name = "lblSize";
             this.lblSize.Size = new System.Drawing.Size(48, 13);
             this.lblSize.TabIndex = 9;
@@ -147,7 +147,7 @@
             // lblColor
             // 
             this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(45, 324);
+            this.lblColor.Location = new System.Drawing.Point(47, 327);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(34, 13);
             this.lblColor.TabIndex = 11;
@@ -156,7 +156,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 376);
+            this.label1.Location = new System.Drawing.Point(44, 377);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 13;
@@ -165,7 +165,7 @@
             // comboBox_Category
             // 
             this.comboBox_Category.FormattingEnabled = true;
-            this.comboBox_Category.Location = new System.Drawing.Point(112, 373);
+            this.comboBox_Category.Location = new System.Drawing.Point(99, 374);
             this.comboBox_Category.Name = "comboBox_Category";
             this.comboBox_Category.Size = new System.Drawing.Size(200, 21);
             this.comboBox_Category.TabIndex = 14;
@@ -173,7 +173,7 @@
             // comboBox_Color
             // 
             this.comboBox_Color.FormattingEnabled = true;
-            this.comboBox_Color.Location = new System.Drawing.Point(141, 321);
+            this.comboBox_Color.Location = new System.Drawing.Point(143, 324);
             this.comboBox_Color.Name = "comboBox_Color";
             this.comboBox_Color.Size = new System.Drawing.Size(200, 21);
             this.comboBox_Color.TabIndex = 16;
@@ -181,7 +181,7 @@
             // comboBox_Size
             // 
             this.comboBox_Size.FormattingEnabled = true;
-            this.comboBox_Size.Location = new System.Drawing.Point(141, 283);
+            this.comboBox_Size.Location = new System.Drawing.Point(143, 286);
             this.comboBox_Size.Name = "comboBox_Size";
             this.comboBox_Size.Size = new System.Drawing.Size(200, 21);
             this.comboBox_Size.TabIndex = 17;
@@ -189,7 +189,7 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(45, 365);
+            this.lblStock.Location = new System.Drawing.Point(47, 368);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(72, 13);
             this.lblStock.TabIndex = 18;
@@ -197,13 +197,14 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(141, 362);
+            this.txtStock.Location = new System.Drawing.Point(143, 365);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(200, 20);
             this.txtStock.TabIndex = 19;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.groupBox1.Controls.Add(this.checkBox_ProductState);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnUpdateProduct);
@@ -227,9 +228,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produkter";
             // 
+            // checkBox_ProductState
+            // 
+            this.checkBox_ProductState.AutoSize = true;
+            this.checkBox_ProductState.Location = new System.Drawing.Point(315, 346);
+            this.checkBox_ProductState.Name = "checkBox_ProductState";
+            this.checkBox_ProductState.Size = new System.Drawing.Size(50, 17);
+            this.checkBox_ProductState.TabIndex = 26;
+            this.checkBox_ProductState.Text = "Aktiv";
+            this.checkBox_ProductState.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(99, 401);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(51, 20);
+            this.btnClear.TabIndex = 24;
+            this.btnClear.Text = "Ryd";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnUpdateProduct
+            // 
+            this.btnUpdateProduct.Location = new System.Drawing.Point(276, 513);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(271, 31);
+            this.btnUpdateProduct.TabIndex = 23;
+            this.btnUpdateProduct.Text = "Opdater Produkt";
+            this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(28, 513);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(233, 31);
+            this.btnDeleteProduct.TabIndex = 22;
+            this.btnDeleteProduct.Text = "Slet Produkt";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+            // 
             // btnAddCategoryToProduct
             // 
-            this.btnAddCategoryToProduct.Location = new System.Drawing.Point(328, 373);
+            this.btnAddCategoryToProduct.Location = new System.Drawing.Point(315, 374);
             this.btnAddCategoryToProduct.Name = "btnAddCategoryToProduct";
             this.btnAddCategoryToProduct.Size = new System.Drawing.Size(232, 23);
             this.btnAddCategoryToProduct.TabIndex = 18;
@@ -240,7 +281,7 @@
             // lblInsertProduct
             // 
             this.lblInsertProduct.AutoSize = true;
-            this.lblInsertProduct.Location = new System.Drawing.Point(277, 441);
+            this.lblInsertProduct.Location = new System.Drawing.Point(204, 432);
             this.lblInsertProduct.Name = "lblInsertProduct";
             this.lblInsertProduct.Size = new System.Drawing.Size(11, 13);
             this.lblInsertProduct.TabIndex = 17;
@@ -266,6 +307,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.groupBox2.Controls.Add(this.btnUpdateProdVer);
             this.groupBox2.Controls.Add(this.btnDeleteProdVer);
             this.groupBox2.Controls.Add(this.btnClear2);
@@ -285,10 +327,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Underprodukter";
             // 
+            // btnUpdateProdVer
+            // 
+            this.btnUpdateProdVer.Location = new System.Drawing.Point(204, 515);
+            this.btnUpdateProdVer.Name = "btnUpdateProdVer";
+            this.btnUpdateProdVer.Size = new System.Drawing.Size(139, 31);
+            this.btnUpdateProdVer.TabIndex = 26;
+            this.btnUpdateProdVer.Text = "Opdater Underprodukt";
+            this.btnUpdateProdVer.UseVisualStyleBackColor = true;
+            this.btnUpdateProdVer.Click += new System.EventHandler(this.btnUpdateProdVer_Click);
+            // 
+            // btnDeleteProdVer
+            // 
+            this.btnDeleteProdVer.Location = new System.Drawing.Point(50, 515);
+            this.btnDeleteProdVer.Name = "btnDeleteProdVer";
+            this.btnDeleteProdVer.Size = new System.Drawing.Size(139, 31);
+            this.btnDeleteProdVer.TabIndex = 25;
+            this.btnDeleteProdVer.Text = "Slet Underprodukt";
+            this.btnDeleteProdVer.UseVisualStyleBackColor = true;
+            this.btnDeleteProdVer.Click += new System.EventHandler(this.btnDeleteProdVer_Click);
+            // 
+            // btnClear2
+            // 
+            this.btnClear2.Location = new System.Drawing.Point(50, 403);
+            this.btnClear2.Name = "btnClear2";
+            this.btnClear2.Size = new System.Drawing.Size(51, 20);
+            this.btnClear2.TabIndex = 25;
+            this.btnClear2.Text = "Ryd";
+            this.btnClear2.UseVisualStyleBackColor = true;
+            this.btnClear2.Click += new System.EventHandler(this.btnClear2_Click);
+            // 
             // lblInserProductVersion
             // 
             this.lblInserProductVersion.AutoSize = true;
-            this.lblInserProductVersion.Location = new System.Drawing.Point(185, 440);
+            this.lblInserProductVersion.Location = new System.Drawing.Point(152, 434);
             this.lblInserProductVersion.Name = "lblInserProductVersion";
             this.lblInserProductVersion.Size = new System.Drawing.Size(11, 13);
             this.lblInserProductVersion.TabIndex = 21;
@@ -311,83 +383,13 @@
             // 
             // btnCreateProdVer
             // 
-            this.btnCreateProdVer.Location = new System.Drawing.Point(112, 456);
+            this.btnCreateProdVer.Location = new System.Drawing.Point(50, 459);
             this.btnCreateProdVer.Name = "btnCreateProdVer";
-            this.btnCreateProdVer.Size = new System.Drawing.Size(176, 38);
+            this.btnCreateProdVer.Size = new System.Drawing.Size(293, 38);
             this.btnCreateProdVer.TabIndex = 15;
             this.btnCreateProdVer.Text = "Opret Underprodukt";
             this.btnCreateProdVer.UseVisualStyleBackColor = true;
             this.btnCreateProdVer.Click += new System.EventHandler(this.btnCreateProdVer_Click_1);
-            // 
-            // btnDeleteProduct
-            // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(135, 512);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(139, 31);
-            this.btnDeleteProduct.TabIndex = 22;
-            this.btnDeleteProduct.Text = "Slet Produkt";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
-            // 
-            // btnUpdateProduct
-            // 
-            this.btnUpdateProduct.Location = new System.Drawing.Point(289, 512);
-            this.btnUpdateProduct.Name = "btnUpdateProduct";
-            this.btnUpdateProduct.Size = new System.Drawing.Size(139, 31);
-            this.btnUpdateProduct.TabIndex = 23;
-            this.btnUpdateProduct.Text = "Opdater Produkt";
-            this.btnUpdateProduct.UseVisualStyleBackColor = true;
-            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(112, 400);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(51, 20);
-            this.btnClear.TabIndex = 24;
-            this.btnClear.Text = "Ryd";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnClear2
-            // 
-            this.btnClear2.Location = new System.Drawing.Point(48, 400);
-            this.btnClear2.Name = "btnClear2";
-            this.btnClear2.Size = new System.Drawing.Size(51, 20);
-            this.btnClear2.TabIndex = 25;
-            this.btnClear2.Text = "Ryd";
-            this.btnClear2.UseVisualStyleBackColor = true;
-            this.btnClear2.Click += new System.EventHandler(this.btnClear2_Click);
-            // 
-            // btnUpdateProdVer
-            // 
-            this.btnUpdateProdVer.Location = new System.Drawing.Point(202, 512);
-            this.btnUpdateProdVer.Name = "btnUpdateProdVer";
-            this.btnUpdateProdVer.Size = new System.Drawing.Size(139, 31);
-            this.btnUpdateProdVer.TabIndex = 26;
-            this.btnUpdateProdVer.Text = "Opdater Underprodukt";
-            this.btnUpdateProdVer.UseVisualStyleBackColor = true;
-            this.btnUpdateProdVer.Click += new System.EventHandler(this.btnUpdateProdVer_Click);
-            // 
-            // btnDeleteProdVer
-            // 
-            this.btnDeleteProdVer.Location = new System.Drawing.Point(48, 512);
-            this.btnDeleteProdVer.Name = "btnDeleteProdVer";
-            this.btnDeleteProdVer.Size = new System.Drawing.Size(139, 31);
-            this.btnDeleteProdVer.TabIndex = 25;
-            this.btnDeleteProdVer.Text = "Slet Underprodukt";
-            this.btnDeleteProdVer.UseVisualStyleBackColor = true;
-            this.btnDeleteProdVer.Click += new System.EventHandler(this.btnDeleteProdVer_Click);
-            // 
-            // checkBox_ProductState
-            // 
-            this.checkBox_ProductState.AutoSize = true;
-            this.checkBox_ProductState.Location = new System.Drawing.Point(328, 345);
-            this.checkBox_ProductState.Name = "checkBox_ProductState";
-            this.checkBox_ProductState.Size = new System.Drawing.Size(50, 17);
-            this.checkBox_ProductState.TabIndex = 26;
-            this.checkBox_ProductState.Text = "Aktiv";
-            this.checkBox_ProductState.UseVisualStyleBackColor = true;
             // 
             // sizeCodeDataGridViewTextBoxColumn
             // 
@@ -449,11 +451,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 580);
+            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.ClientSize = new System.Drawing.Size(994, 583);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CreateProduct";
-            this.Text = "CreateProduct";
+            this.Text = "Produkt Side";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProduct)).EndInit();
