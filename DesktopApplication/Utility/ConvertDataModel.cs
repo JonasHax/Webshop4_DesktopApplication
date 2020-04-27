@@ -57,6 +57,11 @@ namespace DesktopApplication.Utility {
                     State = product.State
                 };
             }
+
+            if (product.StyleNumber != 0) {
+                foundProduct.StyleNumber = product.StyleNumber;
+            }
+
             return foundProduct;
         }
 

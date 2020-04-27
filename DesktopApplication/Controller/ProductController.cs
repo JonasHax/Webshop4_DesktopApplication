@@ -1,11 +1,6 @@
 ﻿using DesktopApplication.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DesktopApplication.Service;
-using DesktopApplication.ProductService;
+using System.Collections.Generic;
 
 namespace DesktopApplication.Controller {
 
@@ -46,25 +41,29 @@ namespace DesktopApplication.Controller {
             return service.GetAllProducts();
         }
 
-        public bool InsertProductCategoryRelation(int styleNumber, string category)
-        {
+        public bool InsertProductCategoryRelation(int styleNumber, string category) {
             ServiceProduct service = new ServiceProduct();
             return service.InsertProductCategoryRelation(styleNumber, category);
         }
 
-        //public CompanyProduct CreateProduct(string name, string description, decimal price)
-        //{
-        //    Product prod = new Product
-        //    {
-        //        Name = name,
-        //        Description = description,
-        //        Price = price,
-        //        State = true
+        public bool DeleteProduct(int styleNumber) {
+            ServiceProduct service = new ServiceProduct();
+            return service.DeleteProduct(styleNumber);
+        }
 
-        //    };
+        public bool DeleteProductVersion(int styleNumber, string sizeCode, string colorCode) {
+            ServiceProduct service = new ServiceProduct();
+            return service.DeleteProductVersion(styleNumber, sizeCode, colorCode);
+        }
 
-        //    ServiceProduct service = new ServiceProduct();
-        //    return service.CreateProduct(prod);
-        //}
+        public bool UpdateProductVersion(int styleNumber, string sizeCode, string colorCode, int newStock) {
+            ServiceProduct service = new ServiceProduct();
+            return service.UpdateProductVersion(styleNumber, sizeCode, colorCode, newStock);
+        }
+
+        public bool UpdateProduct(CompanyProduct productToUpdate) {
+            ServiceProduct service = new ServiceProduct();
+            return service.UpdateProduct(productToUpdate);
+        }
     }
 }

@@ -48,26 +48,33 @@
             this.btnAddCategoryToProduct = new System.Windows.Forms.Button();
             this.lblInsertProduct = new System.Windows.Forms.Label();
             this.gridViewProduct = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblInserProductVersion = new System.Windows.Forms.Label();
+            this.gridViewProdVer = new System.Windows.Forms.DataGridView();
+            this.btnCreateProdVer = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
+            this.btnUpdateProduct = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnClear2 = new System.Windows.Forms.Button();
+            this.btnUpdateProdVer = new System.Windows.Forms.Button();
+            this.btnDeleteProdVer = new System.Windows.Forms.Button();
+            this.checkBox_ProductState = new System.Windows.Forms.CheckBox();
+            this.sizeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyProductVersionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.styleNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblInserProductVersion = new System.Windows.Forms.Label();
-            this.gridViewProdVer = new System.Windows.Forms.DataGridView();
-            this.sizeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colorCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyProductVersionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCreateProdVer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyProductBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProdVer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyProductVersionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyProductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -120,7 +127,7 @@
             // 
             // btnCreateProduct
             // 
-            this.btnCreateProduct.Location = new System.Drawing.Point(154, 447);
+            this.btnCreateProduct.Location = new System.Drawing.Point(135, 460);
             this.btnCreateProduct.Name = "btnCreateProduct";
             this.btnCreateProduct.Size = new System.Drawing.Size(293, 34);
             this.btnCreateProduct.TabIndex = 6;
@@ -197,6 +204,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox_ProductState);
+            this.groupBox1.Controls.Add(this.btnClear);
+            this.groupBox1.Controls.Add(this.btnUpdateProduct);
+            this.groupBox1.Controls.Add(this.btnDeleteProduct);
             this.groupBox1.Controls.Add(this.btnAddCategoryToProduct);
             this.groupBox1.Controls.Add(this.lblInsertProduct);
             this.groupBox1.Controls.Add(this.gridViewProduct);
@@ -211,7 +222,7 @@
             this.groupBox1.Controls.Add(this.btnCreateProduct);
             this.groupBox1.Location = new System.Drawing.Point(9, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(580, 510);
+            this.groupBox1.Size = new System.Drawing.Size(580, 563);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produkter";
@@ -229,7 +240,7 @@
             // lblInsertProduct
             // 
             this.lblInsertProduct.AutoSize = true;
-            this.lblInsertProduct.Location = new System.Drawing.Point(277, 422);
+            this.lblInsertProduct.Location = new System.Drawing.Point(277, 441);
             this.lblInsertProduct.Name = "lblInsertProduct";
             this.lblInsertProduct.Size = new System.Drawing.Size(11, 13);
             this.lblInsertProduct.TabIndex = 17;
@@ -250,7 +261,155 @@
             this.gridViewProduct.Name = "gridViewProduct";
             this.gridViewProduct.Size = new System.Drawing.Size(553, 240);
             this.gridViewProduct.TabIndex = 16;
+            this.gridViewProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewProduct_CellClick);
             this.gridViewProduct.SelectionChanged += new System.EventHandler(this.gridViewProduct_SelectionChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnUpdateProdVer);
+            this.groupBox2.Controls.Add(this.btnDeleteProdVer);
+            this.groupBox2.Controls.Add(this.btnClear2);
+            this.groupBox2.Controls.Add(this.lblInserProductVersion);
+            this.groupBox2.Controls.Add(this.gridViewProdVer);
+            this.groupBox2.Controls.Add(this.btnCreateProdVer);
+            this.groupBox2.Controls.Add(this.comboBox_Color);
+            this.groupBox2.Controls.Add(this.lblSize);
+            this.groupBox2.Controls.Add(this.txtStock);
+            this.groupBox2.Controls.Add(this.lblColor);
+            this.groupBox2.Controls.Add(this.lblStock);
+            this.groupBox2.Controls.Add(this.comboBox_Size);
+            this.groupBox2.Location = new System.Drawing.Point(595, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(390, 563);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Underprodukter";
+            // 
+            // lblInserProductVersion
+            // 
+            this.lblInserProductVersion.AutoSize = true;
+            this.lblInserProductVersion.Location = new System.Drawing.Point(185, 440);
+            this.lblInserProductVersion.Name = "lblInserProductVersion";
+            this.lblInserProductVersion.Size = new System.Drawing.Size(11, 13);
+            this.lblInserProductVersion.TabIndex = 21;
+            this.lblInserProductVersion.Text = "*";
+            // 
+            // gridViewProdVer
+            // 
+            this.gridViewProdVer.AutoGenerateColumns = false;
+            this.gridViewProdVer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridViewProdVer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sizeCodeDataGridViewTextBoxColumn,
+            this.colorCodeDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn});
+            this.gridViewProdVer.DataSource = this.companyProductVersionBindingSource;
+            this.gridViewProdVer.Location = new System.Drawing.Point(21, 19);
+            this.gridViewProdVer.Name = "gridViewProdVer";
+            this.gridViewProdVer.Size = new System.Drawing.Size(345, 240);
+            this.gridViewProdVer.TabIndex = 20;
+            this.gridViewProdVer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewProdVer_CellClick);
+            // 
+            // btnCreateProdVer
+            // 
+            this.btnCreateProdVer.Location = new System.Drawing.Point(112, 456);
+            this.btnCreateProdVer.Name = "btnCreateProdVer";
+            this.btnCreateProdVer.Size = new System.Drawing.Size(176, 38);
+            this.btnCreateProdVer.TabIndex = 15;
+            this.btnCreateProdVer.Text = "Opret Underprodukt";
+            this.btnCreateProdVer.UseVisualStyleBackColor = true;
+            this.btnCreateProdVer.Click += new System.EventHandler(this.btnCreateProdVer_Click_1);
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(135, 512);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(139, 31);
+            this.btnDeleteProduct.TabIndex = 22;
+            this.btnDeleteProduct.Text = "Slet Produkt";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+            // 
+            // btnUpdateProduct
+            // 
+            this.btnUpdateProduct.Location = new System.Drawing.Point(289, 512);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(139, 31);
+            this.btnUpdateProduct.TabIndex = 23;
+            this.btnUpdateProduct.Text = "Opdater Produkt";
+            this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(112, 400);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(51, 20);
+            this.btnClear.TabIndex = 24;
+            this.btnClear.Text = "Ryd";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnClear2
+            // 
+            this.btnClear2.Location = new System.Drawing.Point(48, 400);
+            this.btnClear2.Name = "btnClear2";
+            this.btnClear2.Size = new System.Drawing.Size(51, 20);
+            this.btnClear2.TabIndex = 25;
+            this.btnClear2.Text = "Ryd";
+            this.btnClear2.UseVisualStyleBackColor = true;
+            this.btnClear2.Click += new System.EventHandler(this.btnClear2_Click);
+            // 
+            // btnUpdateProdVer
+            // 
+            this.btnUpdateProdVer.Location = new System.Drawing.Point(202, 512);
+            this.btnUpdateProdVer.Name = "btnUpdateProdVer";
+            this.btnUpdateProdVer.Size = new System.Drawing.Size(139, 31);
+            this.btnUpdateProdVer.TabIndex = 26;
+            this.btnUpdateProdVer.Text = "Opdater Underprodukt";
+            this.btnUpdateProdVer.UseVisualStyleBackColor = true;
+            this.btnUpdateProdVer.Click += new System.EventHandler(this.btnUpdateProdVer_Click);
+            // 
+            // btnDeleteProdVer
+            // 
+            this.btnDeleteProdVer.Location = new System.Drawing.Point(48, 512);
+            this.btnDeleteProdVer.Name = "btnDeleteProdVer";
+            this.btnDeleteProdVer.Size = new System.Drawing.Size(139, 31);
+            this.btnDeleteProdVer.TabIndex = 25;
+            this.btnDeleteProdVer.Text = "Slet Underprodukt";
+            this.btnDeleteProdVer.UseVisualStyleBackColor = true;
+            this.btnDeleteProdVer.Click += new System.EventHandler(this.btnDeleteProdVer_Click);
+            // 
+            // checkBox_ProductState
+            // 
+            this.checkBox_ProductState.AutoSize = true;
+            this.checkBox_ProductState.Location = new System.Drawing.Point(328, 345);
+            this.checkBox_ProductState.Name = "checkBox_ProductState";
+            this.checkBox_ProductState.Size = new System.Drawing.Size(50, 17);
+            this.checkBox_ProductState.TabIndex = 26;
+            this.checkBox_ProductState.Text = "Aktiv";
+            this.checkBox_ProductState.UseVisualStyleBackColor = true;
+            // 
+            // sizeCodeDataGridViewTextBoxColumn
+            // 
+            this.sizeCodeDataGridViewTextBoxColumn.DataPropertyName = "SizeCode";
+            this.sizeCodeDataGridViewTextBoxColumn.HeaderText = "Str.";
+            this.sizeCodeDataGridViewTextBoxColumn.Name = "sizeCodeDataGridViewTextBoxColumn";
+            // 
+            // colorCodeDataGridViewTextBoxColumn
+            // 
+            this.colorCodeDataGridViewTextBoxColumn.DataPropertyName = "ColorCode";
+            this.colorCodeDataGridViewTextBoxColumn.HeaderText = "Farve";
+            this.colorCodeDataGridViewTextBoxColumn.Name = "colorCodeDataGridViewTextBoxColumn";
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Lager";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            // 
+            // companyProductVersionBindingSource
+            // 
+            this.companyProductVersionBindingSource.DataSource = typeof(DesktopApplication.Model.CompanyProductVersion);
             // 
             // styleNumberDataGridViewTextBoxColumn
             // 
@@ -286,84 +445,11 @@
             // 
             this.companyProductBindingSource.DataSource = typeof(DesktopApplication.Model.CompanyProduct);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lblInserProductVersion);
-            this.groupBox2.Controls.Add(this.gridViewProdVer);
-            this.groupBox2.Controls.Add(this.btnCreateProdVer);
-            this.groupBox2.Controls.Add(this.comboBox_Color);
-            this.groupBox2.Controls.Add(this.lblSize);
-            this.groupBox2.Controls.Add(this.txtStock);
-            this.groupBox2.Controls.Add(this.lblColor);
-            this.groupBox2.Controls.Add(this.lblStock);
-            this.groupBox2.Controls.Add(this.comboBox_Size);
-            this.groupBox2.Location = new System.Drawing.Point(595, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(390, 510);
-            this.groupBox2.TabIndex = 21;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Underprodukter";
-            // 
-            // lblInserProductVersion
-            // 
-            this.lblInserProductVersion.AutoSize = true;
-            this.lblInserProductVersion.Location = new System.Drawing.Point(187, 422);
-            this.lblInserProductVersion.Name = "lblInserProductVersion";
-            this.lblInserProductVersion.Size = new System.Drawing.Size(11, 13);
-            this.lblInserProductVersion.TabIndex = 21;
-            this.lblInserProductVersion.Text = "*";
-            // 
-            // gridViewProdVer
-            // 
-            this.gridViewProdVer.AutoGenerateColumns = false;
-            this.gridViewProdVer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridViewProdVer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sizeCodeDataGridViewTextBoxColumn,
-            this.colorCodeDataGridViewTextBoxColumn,
-            this.stockDataGridViewTextBoxColumn});
-            this.gridViewProdVer.DataSource = this.companyProductVersionBindingSource;
-            this.gridViewProdVer.Location = new System.Drawing.Point(21, 19);
-            this.gridViewProdVer.Name = "gridViewProdVer";
-            this.gridViewProdVer.Size = new System.Drawing.Size(345, 240);
-            this.gridViewProdVer.TabIndex = 20;
-            // 
-            // sizeCodeDataGridViewTextBoxColumn
-            // 
-            this.sizeCodeDataGridViewTextBoxColumn.DataPropertyName = "SizeCode";
-            this.sizeCodeDataGridViewTextBoxColumn.HeaderText = "Str.";
-            this.sizeCodeDataGridViewTextBoxColumn.Name = "sizeCodeDataGridViewTextBoxColumn";
-            // 
-            // colorCodeDataGridViewTextBoxColumn
-            // 
-            this.colorCodeDataGridViewTextBoxColumn.DataPropertyName = "ColorCode";
-            this.colorCodeDataGridViewTextBoxColumn.HeaderText = "Farve";
-            this.colorCodeDataGridViewTextBoxColumn.Name = "colorCodeDataGridViewTextBoxColumn";
-            // 
-            // stockDataGridViewTextBoxColumn
-            // 
-            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            this.stockDataGridViewTextBoxColumn.HeaderText = "Lager";
-            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            // 
-            // companyProductVersionBindingSource
-            // 
-            this.companyProductVersionBindingSource.DataSource = typeof(DesktopApplication.Model.CompanyProductVersion);
-            // 
-            // btnCreateProdVer
-            // 
-            this.btnCreateProdVer.Location = new System.Drawing.Point(113, 447);
-            this.btnCreateProdVer.Name = "btnCreateProdVer";
-            this.btnCreateProdVer.Size = new System.Drawing.Size(176, 38);
-            this.btnCreateProdVer.TabIndex = 15;
-            this.btnCreateProdVer.Text = "Opret Underprodukt";
-            this.btnCreateProdVer.UseVisualStyleBackColor = true;
-            this.btnCreateProdVer.Click += new System.EventHandler(this.btnCreateProdVer_Click_1);
-            // 
             // CreateProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 532);
+            this.ClientSize = new System.Drawing.Size(987, 580);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "CreateProduct";
@@ -371,11 +457,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyProductBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProdVer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyProductVersionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyProductBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,5 +501,12 @@
         private System.Windows.Forms.Label lblInsertProduct;
         private System.Windows.Forms.Label lblInserProductVersion;
         private System.Windows.Forms.Button btnAddCategoryToProduct;
+        private System.Windows.Forms.Button btnUpdateProduct;
+        private System.Windows.Forms.Button btnDeleteProduct;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnUpdateProdVer;
+        private System.Windows.Forms.Button btnDeleteProdVer;
+        private System.Windows.Forms.Button btnClear2;
+        private System.Windows.Forms.CheckBox checkBox_ProductState;
     }
 }

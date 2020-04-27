@@ -26,5 +26,13 @@ namespace DesktopApplication.Service {
         List<string> GetAllCategories();
 
         bool InsertProductCategoryRelation(int styleNumber, string category);
+
+        bool DeleteProduct(int styleNumber);
+
+        bool DeleteProductVersion(int styleNumber, string sizeCode, string colorCode);
+
+        bool UpdateProductVersion(int styleNumber, string sizeCode, string colorCode, int newStock);
+
+        bool UpdateProduct(CompanyProduct productToUpdate);
     }
 }

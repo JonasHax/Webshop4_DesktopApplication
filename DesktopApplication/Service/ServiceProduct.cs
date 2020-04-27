@@ -70,10 +70,34 @@ namespace DesktopApplication.Service {
             return proxy.InsertProductVersion(convertedProdVer, styleNumber);
         }
 
-        public bool InsertProductCategoryRelation(int styleNumber, string category)
-        {
+        public bool InsertProductCategoryRelation(int styleNumber, string category) {
             ProductServiceClient proxy = new ProductServiceClient();
             return proxy.InsertProductCategoryRelation(styleNumber, category);
+        }
+
+        public bool DeleteProduct(int styleNumber) {
+            ProductServiceClient proxy = new ProductServiceClient();
+            return proxy.DeleteProduct(styleNumber);
+        }
+
+        public bool DeleteProductVersion(int styleNumber, string sizeCode, string colorCode) {
+            ProductServiceClient proxy = new ProductServiceClient();
+            return proxy.DeleteProductVersion(styleNumber, sizeCode, colorCode);
+        }
+
+        public bool UpdateProductVersion(int styleNumber, string sizeCode, string colorCode, int newStock) {
+            ProductServiceClient proxy = new ProductServiceClient();
+            return proxy.UpdateProductVersion(styleNumber, sizeCode, colorCode, newStock);
+        }
+
+        public bool UpdateProduct(CompanyProduct productToUpdate) {
+            ProductServiceClient proxy = new ProductServiceClient();
+
+            // convert
+            ConvertDataModel converter = new ConvertDataModel();
+            Product product = converter.ConvertToServiceProduct(productToUpdate);
+
+            return proxy.UpdateProduct(product);
         }
     }
 }
