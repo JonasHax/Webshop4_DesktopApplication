@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace DesktopApplication.Model {
 
     public class CompanyProductVersion {
+
+        // Getters and setters
         public CompanyProduct Product { get; set; }
         public int Stock { get; set; }
 
