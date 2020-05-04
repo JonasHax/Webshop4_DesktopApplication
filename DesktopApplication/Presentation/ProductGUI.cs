@@ -185,7 +185,11 @@ namespace DesktopApplication {
             CompanyProductVersion selectedProdVer = (CompanyProductVersion)gridViewProdVer.CurrentRow.DataBoundItem;
 
             if (selectedProdVer != null) {
-                result = pc.DeleteProductVersion(selectedProdVer.Product.StyleNumber, selectedProdVer.SizeCode, selectedProdVer.ColorCode);
+                try {
+                    result = pc.DeleteProductVersion(selectedProdVer.Product.StyleNumber, selectedProdVer.SizeCode, selectedProdVer.ColorCode);
+                } catch (Exception ex) {
+                    lblInserProductVersion.Text = ex.Message;
+                }
             }
 
             if (result) {
