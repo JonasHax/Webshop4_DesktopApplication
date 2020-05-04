@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace DesktopApplication.Model {
 
     public class CompanyProduct {
+
+        // Getters and setters.
         public int StyleNumber { get; set; }
 
         public string Name { get; set; }

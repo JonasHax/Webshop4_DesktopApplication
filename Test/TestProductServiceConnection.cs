@@ -20,7 +20,7 @@ namespace Test {
 
         [TestMethod]
         public void TestGetProductById() {
-            CompanyProduct product = controller.GetProductById(1);
+            CompanyProduct product = controller.GetProductById(2);
 
             Assert.IsNotNull(product.Name);
             Assert.IsNotNull(product.Description);
