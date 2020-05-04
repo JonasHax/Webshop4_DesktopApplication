@@ -10,14 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static DesktopApplication.Model.CompanyEnum;
 
 namespace DesktopApplication {
 
-    public partial class CreateProduct : Form {
+    public partial class ProductGUI : Form {
         private readonly ProductController pc = new ProductController();
 
-        public CreateProduct() {
+        public ProductGUI() {
             InitializeComponent();
             List<string> colors = pc.GetAllColors();
             foreach (string color in colors) {

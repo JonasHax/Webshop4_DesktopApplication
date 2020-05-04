@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopApplication.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace DesktopApplication {
         private static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateProduct());
+            Application.Run(new Presentation.MainMenu());
         }
     }
 }

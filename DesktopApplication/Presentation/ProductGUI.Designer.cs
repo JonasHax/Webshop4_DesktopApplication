@@ -1,6 +1,6 @@
 ﻿namespace DesktopApplication
 {
-    partial class CreateProduct
+    partial class ProductGUI
     {
         /// <summary>
         /// Required designer variable.

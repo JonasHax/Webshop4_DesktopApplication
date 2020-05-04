@@ -48,13 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\OrderService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProductService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controller\OrderController.cs" />
     <Compile Include="Controller\ProductController.cs" />
-    <Compile Include="Model\CompanyEnum.cs" />
+    <Compile Include="Presentation\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\OrderGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\OrderGUI.Designer.cs">
+      <DependentUpon>OrderGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\ProductGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,10 +82,18 @@
     <Compile Include="Model\CompanyProductVersion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IUseOrderService.cs" />
     <Compile Include="Service\IUseProductService.cs" />
+    <Compile Include="Service\ServiceOrder.cs" />
     <Compile Include="Service\ServiceProduct.cs" />
     <Compile Include="Utility\ConvertDataModel.cs" />
     <Compile Include="Utility\IModelConvert.cs" />
+    <EmbeddedResource Include="Presentation\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\OrderGUI.resx">
+      <DependentUpon>OrderGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ProductGUI.resx">
       <DependentUpon>ProductGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +106,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\OrderService\DesktopApplication.OrderService.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\OrderService\service.wsdl" />
+    <None Include="Connected Services\OrderService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OrderService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OrderService\Services.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProductService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -116,6 +154,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\OrderService\" />
     <WCFMetadataStorage Include="Connected Services\ProductService\" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +165,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ProductService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OrderService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OrderService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OrderService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

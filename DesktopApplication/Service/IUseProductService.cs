@@ -9,11 +9,8 @@ using System.Threading.Tasks;
 namespace DesktopApplication.Service {
 
     public interface IUseProductService {
-        //CompanyProduct GetProductById(int id);
 
         CompanyProduct GetProductById(int id);
-
-        //CompanyProduct CreateProduct(Product prod);
 
         bool InsertProduct(CompanyProduct productToInsert);
 
