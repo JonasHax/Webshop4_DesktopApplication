@@ -447,7 +447,7 @@
             // 
             this.companyProductBindingSource.DataSource = typeof(DesktopApplication.Model.CompanyProduct);
             // 
-            // CreateProduct
+            // ProductGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -457,7 +457,7 @@
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "CreateProduct";
+            this.Name = "ProductGUI";
             this.Text = "Produkt Side";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -14,5 +14,10 @@ namespace DesktopApplication.Service {
             OrderServiceClient proxy = new OrderServiceClient();
             return proxy.GetAllOrders().ToList();
         }
+
+        public List<SalesLineItem> GetSalesLineItemsFromOrderID(int id) {
+            OrderServiceClient proxy = new OrderServiceClient();
+            return proxy.GetSalesLineItemsFromOrderID(id).ToList();
+        }
     }
 }

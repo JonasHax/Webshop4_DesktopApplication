@@ -482,6 +482,12 @@ namespace DesktopApplication.OrderService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrders", ReplyAction="http://tempuri.org/IOrderService/GetAllOrdersResponse")]
         System.Threading.Tasks.Task<DesktopApplication.OrderService.Order[]> GetAllOrdersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetSalesLineItemsFromOrderID", ReplyAction="http://tempuri.org/IOrderService/GetSalesLineItemsFromOrderIDResponse")]
+        DesktopApplication.OrderService.SalesLineItem[] GetSalesLineItemsFromOrderID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetSalesLineItemsFromOrderID", ReplyAction="http://tempuri.org/IOrderService/GetSalesLineItemsFromOrderIDResponse")]
+        System.Threading.Tasks.Task<DesktopApplication.OrderService.SalesLineItem[]> GetSalesLineItemsFromOrderIDAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -549,6 +555,14 @@ namespace DesktopApplication.OrderService {
         
         public System.Threading.Tasks.Task<DesktopApplication.OrderService.Order[]> GetAllOrdersAsync() {
             return base.Channel.GetAllOrdersAsync();
+        }
+        
+        public DesktopApplication.OrderService.SalesLineItem[] GetSalesLineItemsFromOrderID(int id) {
+            return base.Channel.GetSalesLineItemsFromOrderID(id);
+        }
+        
+        public System.Threading.Tasks.Task<DesktopApplication.OrderService.SalesLineItem[]> GetSalesLineItemsFromOrderIDAsync(int id) {
+            return base.Channel.GetSalesLineItemsFromOrderIDAsync(id);
         }
     }
 }

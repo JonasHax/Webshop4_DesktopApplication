@@ -109,6 +109,9 @@
     <None Include="Connected Services\OrderService\DesktopApplication.OrderService.Order.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\OrderService\DesktopApplication.OrderService.SalesLineItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\OrderService\service.wsdl" />
     <None Include="Connected Services\OrderService\service.xsd">
       <SubType>Designer</SubType>

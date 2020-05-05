@@ -13,5 +13,10 @@ namespace DesktopApplication.Controller {
             ServiceOrder service = new ServiceOrder();
             return service.GetAllOrders();
         }
+
+        public List<OrderService.SalesLineItem> GetSalesLineItemsFromOrderID(int id) {
+            ServiceOrder service = new ServiceOrder();
+            return service.GetSalesLineItemsFromOrderID(id);
+        }
     }
 }
