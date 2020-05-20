@@ -25,8 +25,7 @@ namespace DesktopApplication.Model {
             ProductVersions = new List<CompanyProductVersion>();
         }
 
-        public CompanyProduct(string name, string description, decimal price)
-        {
+        public CompanyProduct(string name, string description, decimal price) {
             Name = name;
             Description = description;
             Price = price;
@@ -35,13 +34,5 @@ namespace DesktopApplication.Model {
         public override string ToString() {
             return $"Varenummer: {StyleNumber} \nNavn: {Name}\nPris: {Price},-\nBeskrivelse: {Description}\nTilgængelig: {State}"; /*\nLager: {Stock} \nStr.: {SizeCode} \nFarve: {ColorCode}*/
         }
-
-        //public void AddProductVersion(ProductVersion prodVer) {
-        //    ProductVersions.Add(prodVer);
-        //}
-
-        //public List<CompanyProductVersion> GetProductVersions() {
-        //    return this.ProductVersions;
-        //}
     }
 }

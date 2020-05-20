@@ -29,10 +29,6 @@ namespace DesktopApplication.Service {
             return proxy.GetAllSizes().ToList();
         }
 
-        //public CompanyProduct CreateProduct(Product prod) {
-        //    throw new NotImplementedException();
-        //}
-
         public CompanyProduct GetProductById(int id) {
             ProductServiceClient proxy = new ProductServiceClient();
             ConvertDataModel converter = new ConvertDataModel();

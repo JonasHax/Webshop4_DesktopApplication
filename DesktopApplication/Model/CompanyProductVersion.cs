@@ -10,6 +10,7 @@ namespace DesktopApplication.Model {
 
         // Getters and setters
         public CompanyProduct Product { get; set; }
+
         public int Stock { get; set; }
 
         public string SizeCode { get; set; }
